@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horizontal Scroll</title>
+
+    <!-- GSAP + Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <span class="nav-logo">Portfolio</span>
+
+      <ul class="nav-tabs" id="navTabs">
+        <li><button data-index="0" class="active">Recent Work</button></li>
+        <li><button data-index="1">Most Famous</button></li>
+        <li><button data-index="2">Ski &amp; Snow</button></li>
+        <li><button data-index="3">Urban Life</button></li>
+        <li><button data-index="4">Abstract</button></li>
+      </ul>
+
+      <div class="nav-scroll-hint">
+        Scroll to explore
+        <svg
+          width="14"
+          height="14"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </div>
+    </nav>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- SECTION DOTS -->
+    <div class="dots" id="dots">
+      <div class="dot active" data-index="0"></div>
+      <div class="dot" data-index="1"></div>
+      <div class="dot" data-index="2"></div>
+      <div class="dot" data-index="3"></div>
+      <div class="dot" data-index="4"></div>
+    </div>
+
+    <!-- HORIZONTAL WRAPPER -->
+    <div class="h-outer" id="hOuter">
+      <div class="h-track" id="hTrack">
+        <!-- S1: RECENT WORK -->
+        <section class="section s1" data-section="0">
+          <div class="s1-bg"></div>
+          <div class="s-content">
+            <div class="s-left">
+              <p class="s-label anim-fade">Section 01</p>
+              <h2 class="s-title anim-fade">Recent<br /><em>Work</em></h2>
+              <p class="s-body anim-fade">
+                A curated selection of projects from the past year — each one a
+                deliberate experiment in craft, concept, and execution. Built to
+                push boundaries, not to follow them.
+              </p>
+              <button class="s-cta anim-fade">
+                View all projects
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="s-visual anim-fade">
+              <div class="v-card"></div>
+              <div class="v-card"></div>
+            </div>
+          </div>
+          <span class="s-index">01</span>
+        </section>
+
+        <!-- S2: MOST FAMOUS -->
+        <section class="section s2" data-section="1">
+          <div class="s2-bg"></div>
+          <div class="s-content">
+            <div class="s-left">
+              <p class="s-label anim-fade">Section 02</p>
+              <h2 class="s-title anim-fade">Most<br /><em>Famous</em></h2>
+              <p class="s-body anim-fade">
+                The work that defined a chapter. These pieces earned recognition
+                not through noise, but through a quiet, undeniable quality that
+                continues to resonate.
+              </p>
+              <button class="s-cta anim-fade">
+                Explore highlights
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="s-visual anim-fade">
+              <div class="v-card"></div>
+              <div class="v-card"></div>
+            </div>
+          </div>
+          <span class="s-index">02</span>
+        </section>
+
+        <!-- S3: SKI & SNOW -->
+        <section class="section s3" data-section="2">
+          <div class="s3-bg"></div>
+          <div class="snow" id="snow"></div>
+          <div class="s-content">
+            <div class="s-left">
+              <p class="s-label anim-fade">Section 03</p>
+              <h2 class="s-title anim-fade">Ski &amp;<br /><em>Snow</em></h2>
+              <p class="s-body anim-fade">
+                High altitude, low temperature, total silence. This series was
+                captured across three mountain ranges — a study in cold light,
+                steep terrain, and the human instinct to descend.
+              </p>
+              <button class="s-cta anim-fade">
+                See the series
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="s-visual anim-fade">
+              <div class="v-card"></div>
+              <div class="v-card"></div>
+            </div>
+          </div>
+          <span class="s-index">03</span>
+        </section>
+
+        <!-- S4: URBAN LIFE -->
+        <section class="section s4" data-section="3">
+          <div class="s4-bg"></div>
+          <div class="s-content">
+            <div class="s-left">
+              <p class="s-label anim-fade">Section 04</p>
+              <h2 class="s-title anim-fade">Urban<br /><em>Life</em></h2>
+              <p class="s-body anim-fade">
+                Streets don't sleep. This collection traces the restless energy
+                of cities — the neon, the concrete, the anonymous faces moving
+                through light and shadow.
+              </p>
+              <button class="s-cta anim-fade">
+                Walk the streets
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="s-visual anim-fade">
+              <div class="v-card"></div>
+              <div class="v-card"></div>
+            </div>
+          </div>
+          <span class="s-index">04</span>
+        </section>
+
+        <!-- S5: ABSTRACT -->
+        <section class="section s5" data-section="4">
+          <div class="s5-bg"></div>
+          <div class="s-content">
+            <div class="s-left">
+              <p class="s-label anim-fade">Section 05</p>
+              <h2 class="s-title anim-fade"><em>Abstract</em><br />Forms</h2>
+              <p class="s-body anim-fade">
+                When subject dissolves and only feeling remains. A series of
+                experimental compositions that chase sensation over
+                representation — color, texture, and time as raw material.
+              </p>
+              <button class="s-cta anim-fade">
+                Enter the void
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="s-visual anim-fade">
+              <div class="v-card"></div>
+              <div class="v-card"></div>
+            </div>
+          </div>
+          <span class="s-index">05</span>
+        </section>
+      </div>
+      <!-- end h-track -->
+    </div>
+    <!-- end h-outer -->
+
+    <div class="container">
+        <h1>test</h1>
+        <h1>test</h1>
+        <h1>test</h1>
+        <h1>test</h1>
+        <h1>test</h1>
+    </div>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
